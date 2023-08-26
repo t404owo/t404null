@@ -2515,6 +2515,73 @@ a {
     left: -1rem;
   }
 }
+.cid-sIHl7tzJ17 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-image: url("https://cdn.glitch.global/2d9e31c1-a947-46cd-9fd2-8c92be70abe2/Oblitus_Requiem.png");
+}
+.cid-sIHl7tzJ17 .card-wrapper {
+  background: #353535;
+  border-radius: 4px;
+}
+@media (max-width: 767px) {
+  .cid-sIHl7tzJ17 .card-wrapper {
+    padding: 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .cid-sIHl7tzJ17 .card-wrapper {
+    padding: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .cid-sIHl7tzJ17 .card-wrapper {
+    padding: 4rem;
+  }
+}
+.cid-sIHl7tzJ17 .card-title {
+  text-align: left;
+  color: #ffffff;
+}
+.cid-sIHl7tzJ17 .mbr-text,
+.cid-sIHl7tzJ17 .mbr-section-btn {
+  text-align: left;
+  color: #fafafa;
+}
+.cid-sIHl7tzJ16 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-image: url("https://cdn.glitch.global/2d9e31c1-a947-46cd-9fd2-8c92be70abe2/A_Lake_With_Endless_Stars.png");
+}
+.cid-sIHl7tzJ16 .card-wrapper {
+  background: #353535;
+  border-radius: 4px;
+}
+@media (max-width: 767px) {
+  .cid-sIHl7tzJ16 .card-wrapper {
+    padding: 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .cid-sIHl7tzJ16 .card-wrapper {
+    padding: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .cid-sIHl7tzJ16 .card-wrapper {
+    padding: 4rem;
+  }
+}
+.cid-sIHl7tzJ16 .card-title {
+  text-align: left;
+  color: #ffffff;
+}
+.cid-sIHl7tzJ16 .mbr-text,
+.cid-sIHl7tzJ16 .mbr-section-btn {
+  text-align: left;
+  color: #fafafa;
+}
+
 .cid-sIHl7tzJ15 {
   padding-top: 5rem;
   padding-bottom: 5rem;
