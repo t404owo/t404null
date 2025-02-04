@@ -6,12 +6,41 @@ let carousel = document.querySelector(".carousel");
 
 let bg = document.querySelector(".slider-bg");
 
+/*
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.28.0/dist/umd/supabase.min.js"></script>
+<script>
+  const supabaseUrl = 'https://owbamcqdmqetrgcznxva.supabase.co';
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im93YmFtY3FkbXFldHJnY3pueHZhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjI5NDU5NjIsImV4cCI6MjAzODUyMTk2Mn0.xNen7b513ZGwJ-Qu5iZ6K8qrmvy4QVjS10wiYbEEwKc';
+  //anon key, you cant access private stuffs or add hilarious stuffs w/ this...
+  //(unless sending me some malicious links but I delete your msg)
+  const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+  async function fetchData() { 
+      let { data, error } = await supabase.
+      from('events')
+      .select('*'); //note it only shows u public stuffs
+      if (error) { 
+          console.error('Error fetching data:', error); 
+      } else {
+           console.log('Data:', data);
+           //edit tmr
+      } 
+  } 
+  fetchData();
+</script>
+
+*/
+
 let img = [
   "https://cdn.glitch.com/f6cb427c-2cdb-4693-bc00-9d3e2991008c%2FScreenshot%20(36).png?v=1633031087464",
   "https://cdn.glitch.global/2d9e31c1-a947-46cd-9fd2-8c92be70abe2/Oblitus_Requiem.png?v=1693055600835",
-  "https://cdn.glitch.global/2d9e31c1-a947-46cd-9fd2-8c92be70abe2/A_Lake_With_Endless_Stars.png?v=1683474226492",
+  "https://cdn.glitch.global/2d9e31c1-a947-46cd-9fd2-8c92be70abe2/A_Lake_With_Endless_Stars.png",
 ];
-let pg = ["/", "release/Oblitus_Requiem", "release/A_Lake_With_Endless_Stars"];
+let pg = [
+  "/",
+  "release/Oblitus_Requiem",
+  "release/A_Lake_With_Endless_Stars"
+];
+
 
 if (!document) console.log("press f");
 if (!next) console.log("Class next missing.");
@@ -49,6 +78,14 @@ function set() {
   pgctrl[0].children[slider_index].style.opacity = 1;
   if (bg) bg.style.backgroundImage = `url('${img[slider_index]}')`;
 }
+
+
+// setInterval(getinfo, 60000);
+// async function getinfo() {
+//   let res = await fetch("");
+//   const info = await res.json();
+//   if (bg) bg.style.backgroundImage = `url('${info.slider[1].img}')`;
+// }
 
 function reset() {
   for (var i = 0; i < slider.children.length; i++) {
