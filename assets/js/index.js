@@ -27,7 +27,7 @@ let img = [
   pg = ["/", "release/Oblitus_Requiem", "release/A_Lake_With_Endless_Stars"],
   title = [
     "This page is still under construction.",
-    "Oblitus Requiem \\Against the Forsaken Legacy//",
+    "Oblitus Requiem \\\\Against the Forsaken Legacy//",
     "A Lake With Endless Stars",
   ],
   desc = [
