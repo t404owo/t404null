@@ -13,6 +13,10 @@ main {
   margin-top: 0;
   min-height: calc(100vh - 10vh);
 }
+.main-page {
+  max-width: 2300px;
+  margin: 0 auto;
+}
 hr {
   margin: 2rem 0px;
 }
@@ -223,6 +227,8 @@ nav .dropdown {
 }
 .dropdown {
   display: none;
+  overflow: auto;
+  max-height: 70vh;
 }
 /*---- main ----*/
 .container {
@@ -542,7 +548,8 @@ nav .dropdown {
   color: #fff;
 }
 .release-track .text-box {
-  margin: 25% 0;
+  max-width: 1250px;
+  margin: 25% auto;
   background-color: rgba(0, 0, 0, 75);
   height: 100%;
   color: #ddd;
@@ -597,7 +604,7 @@ nav .dropdown {
   display: block;
   height: 2rem;
 }
-@media screen and (width >= 1125px) and (width<=1620px) {
+@media screen and (width >= 1180px) and (width<=1690px) {
   /*if(width<1620px&&width>=1125px)*/
   nav .dropdown .dropdown-social {
     position: relative;
@@ -640,7 +647,7 @@ nav .dropdown {
     display: block;
   }
 }
-@media screen and (width<1125px) {
+@media screen and (width<1180px) {
   /*if(width<1125px)*/
   nav {
     font-size: 1.4rem;
