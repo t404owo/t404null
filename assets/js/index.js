@@ -49,9 +49,71 @@ let highlights = [],
 
 let path_name = window.location.pathname;
 //Start building the page by calling data
-if (path_name === "/") build_event(0);
-if (path_name === "/" || path_name === "/release") build_event(1);
-if (path_name === "/" || path_name === "/activity") build_event(2);
+let params = new URLSearchParams(location.search);
+if (!params.get("release")) {
+  if (path_name === "/") {
+    document.title = "t404:null | Home";
+    build_event(0);
+  }
+  if (path_name === "/" || path_name === "/release") build_event(1);
+  if (path_name === "/" || path_name === "/activity") build_event(2);
+} else {
+  let main = document.querySelector("main");
+  main.innerHTML = "";
+  /*
+  <div class="release-track" style="
+          background-image: url(https://cdn.glitch.global/f594d6b7-e72e-477c-b5cb-d71abbd39f44/oblitus-requiem.png);
+          background-size: cover;
+          background-position: center;
+        ">
+        <div class="text-box">
+          <h1 class="title">
+            <strong>Insert Title here</strong>
+          </h1>
+          (Raw Context here)
+        </div>
+      </div>
+  */
+  let id = params.get("release").replace(/^\//g, "");
+  console.log(id);
+  supabase
+    .from("events")
+    .select("title, context, bg_src")
+    .eq("event_id", id)
+    .then((d) => {
+      let res = d.data;
+      if (res !== null && res.length > 0) {
+        let _pg = document.createElement("div"),
+          _box = document.createElement("div"),
+          _h1 = document.createElement("h1"),
+          title = document.createElement("strong"),
+          data = res[0];
+
+        _pg.classList.add("release-track");
+        _pg.style =
+          "background-image: url(" +
+          data.bg_src +
+          ");" +
+          "background-size: cover;" +
+          "background-position: center;";
+
+        _box.classList.add("text-box");
+        title.textContent = data.title;
+        
+        
+        main.appendChild(_pg);
+        _pg.appendChild(_box);
+        _box.appendChild(_h1);
+        _h1.appendChild(title);
+        _box.innerHTML+=data.context;
+
+        document.title = "t404:null | " + data.title;
+      } else {
+        main.innerHTML = "404";
+        document.title = "t404:null | Not Found";
+      }
+    });
+}
 
 // #region Slider section
 
@@ -130,12 +192,13 @@ function pg_ctrl() {
     let n = i;
     button.textContent = "•"; //&bull; not &middot;
     pgctrl.appendChild(button);
-    
-  if (pgctrl) button.addEventListener("click", function () {
-      reset();
-      slider_index = n;
-      set();
-    })
+
+    if (pgctrl)
+      button.addEventListener("click", function () {
+        reset();
+        slider_index = n;
+        set();
+      });
   }
 }
 
