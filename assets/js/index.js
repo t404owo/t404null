@@ -130,15 +130,13 @@ function pg_ctrl() {
     let n = i;
     button.textContent = "•"; //&bull; not &middot;
     pgctrl.appendChild(button);
-  }
-  if (pgctrl)
-  [].slice.call(pgctrl.children).forEach((m, n) =>
-    m.addEventListener("click", function () {
+    
+  if (pgctrl) button.addEventListener("click", function () {
       reset();
       slider_index = n;
       set();
     })
-  );
+  }
 }
 
 function set() {
