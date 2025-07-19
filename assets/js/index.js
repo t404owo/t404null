@@ -79,15 +79,19 @@ if (!params.get("release")) {
   supabase
     .from("events")
     .select("title, context, bg_src")
+    .or("event_type.eq.release,event_type.eq.highlight_release")//
     .eq("event_id", id)
     .then((d) => {
       let res = d.data;
       if (res !== null && res.length > 0) {
         let _pg = document.createElement("div"),
           _box = document.createElement("div"),
+          _longbr = document.createElement("div"),
           _h1 = document.createElement("h1"),
           title = document.createElement("strong"),
           data = res[0];
+        
+        _longbr.classList.add("long-break");
 
         _pg.classList.add("release-track");
         _pg.style =
@@ -102,6 +106,7 @@ if (!params.get("release")) {
         
         
         main.appendChild(_pg);
+        _box.appendChild(_longbr);
         _pg.appendChild(_box);
         _box.appendChild(_h1);
         _h1.appendChild(title);
