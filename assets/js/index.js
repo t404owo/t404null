@@ -292,7 +292,7 @@ async function init_releases(d) {
           <p> "Even if you don't remember me now, I will bring the you I once knew back from them." </p>
         </a>
 */
-    if(releases.length>0)album_cards.context="";
+    if(releases.length>0)album_cards.innerHTML="";
     releases.forEach((a) => {
       let _card = document.createElement("a"),
         _bg_img = document.createElement("div"),
@@ -371,7 +371,7 @@ async function init_activities(d) {
           <p>???</p>
           <p>???</p>
         </a>*/
-    if(activities.length>0)album_cards.context="";
+    if(activities.length>0)album_cards.innerHTML="";
     activities.forEach((a) => {
       let _card = document.createElement("a"),
         _bg_img = document.createElement("div"),
