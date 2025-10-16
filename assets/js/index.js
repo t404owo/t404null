@@ -10,7 +10,8 @@ let carousel = document.querySelector(".carousel");
 let bg = document.querySelector(".slider-bg");
 
 //Album-cards
-let album_cards = document.querySelector(".album-cards");
+let album_cards = document.querySelector(".album-cards"),
+half_img_cards = document.querySelector(".half-image-cards");
 
 //The Database call.
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
@@ -291,6 +292,7 @@ async function init_releases(d) {
           <p> "Even if you don't remember me now, I will bring the you I once knew back from them." </p>
         </a>
 */
+    if(releases.length>0)album_cards.context="";
     releases.forEach((a) => {
       let _card = document.createElement("a"),
         _bg_img = document.createElement("div"),
@@ -321,7 +323,7 @@ async function init_activities(d) {
   if (d.error) {
     console.error("Error fetching data:", d.error);
   } else {
-    releases = d.data;
+    activities = d.data;
     /*<a class="card" href="/activity">
           <div class="bg-img" style="
               background-image: url(https://cdn.glitch.global/f594d6b7-e72e-477c-b5cb-d71abbd39f44/fof-genesis.png);
@@ -369,7 +371,8 @@ async function init_activities(d) {
           <p>???</p>
           <p>???</p>
         </a>*/
-    releases.forEach((a) => {
+    if(activities.length>0)album_cards.context="";
+    activities.forEach((a) => {
       let _card = document.createElement("a"),
         _bg_img = document.createElement("div"),
         _h2 = document.createElement("h2"),
@@ -390,7 +393,7 @@ async function init_activities(d) {
       _card.appendChild(_h2);
       _card.appendChild(_p_subtitle);
       _card.appendChild(_p_preview);
-      album_cards.appendChild(_card);
+      half_img_cards.appendChild(_card);
     });
   }
 }
