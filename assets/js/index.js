@@ -56,8 +56,8 @@ if (!params.get("release")) {
     document.title = "t404:null | Home";
     build_event(0);
   }
-  if (path_name === "/" || path_name === "/release") build_event(1);
-  if (path_name === "/" || path_name === "/activity") build_event(2);
+  if (path_name === "/" || path_name === "/release" || path_name === "/release/") build_event(1);
+  if (path_name === "/" || path_name === "/activity" || path_name === "/activity/") build_event(2);
 } else {
   let main = document.querySelector("main");
   main.innerHTML = "";
