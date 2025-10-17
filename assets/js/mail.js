@@ -26,7 +26,7 @@ form.addEventListener("submit", async (e) => {
     if (!name || !email || !subject || !message || 
         name.length==0 || email.length==0 || subject.length==0 || message.length==0) {
         statusMessage.textContent = "Please fill in all fields.";
-        statusMessage.style.color = "#FFDCDC";
+        statusMessage.style = "background: #FFDCDC";
         return;
     }
 
@@ -40,11 +40,11 @@ form.addEventListener("submit", async (e) => {
         }
 
         statusMessage.textContent = "Message sent successfully!";
-        statusMessage.style.color = "#DDF6D2";
+        statusMessage.style = "background: #FFDCDC";
         form.reset();
     } catch (error) {
         console.error("Error sending message:", error);
         statusMessage.textContent = "Error sending message. Please try again.";
-        statusMessage.style.color = "#FFDCDC";
+        statusMessage.style = "background: #FFDCDC";
     }
 });
