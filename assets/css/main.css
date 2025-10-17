@@ -602,6 +602,7 @@ nav {
     border-radius: 5px;
     transition: 0.3s;
     margin-top: 0.5rem;
+    padding: 5px;
   }
 
   :not(textarea) {
