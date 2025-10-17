@@ -8,11 +8,13 @@ body {
   height: 100%;
 }
 
-main, textarea, textfield {
+main,
+textarea,
+textfield {
   font-family: Jost, "Noto Sans Japanese", sans-serif, --apple-system;
 }
 
-main { 
+main {
   margin: 0.75rem;
   height: 100%;
   margin-bottom: 0;
@@ -776,7 +778,8 @@ nav {
   }
 }
 
-textarea, textfield {
+textarea,
+textfield {
   padding: 5px;
   font-size: 0.95rem;
 }
