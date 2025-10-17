@@ -587,6 +587,98 @@ nav {
   }
 }
 
+
+
+.contact-email {
+
+  .inputbox {
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    display: block;
+    background: #EFEFEF;
+    color: black;
+    border: 0px solid #505050;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: 0.5rem;
+  }
+
+  :not(textarea) {
+    text-align: center;
+  }
+
+  .inputbox:hover {
+    background: #DEDEDE;
+  }
+
+  .inputbox:focus {
+    background: #CECECE;
+  }
+
+  button {
+    width: 100%;
+    height: 3rem;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .formbutton {
+    background: #272727;
+    color: #fff;
+    border: 0px;
+    transition-duration: 300ms;
+    cursor: pointer;
+  }
+
+  .formbutton:hover {
+    background: #727272;
+  }
+
+  .form {
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 4rem 2.5rem;
+    width: 65%;
+    background: #FDFDFD;
+    box-shadow: rgba(50, 50, 50, 0.1) 0px 4px 12px;
+  }
+
+  .error_box {
+    background: #FFEEEE;
+    border-radius: 5px;
+
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .box {
+    height:2rem;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0px;
+    margin-bottom: 1rem;
+  }
+}
+
+textarea,
+textfield {
+  padding: 5px;
+  font-size: 0.95rem;
+  resize: vertical;
+  min-height: 10rem;
+}
+
 .topic {
   padding: 1rem;
   font-size: 3rem;
@@ -706,84 +798,6 @@ nav {
   display: block;
   height: 2rem;
 }
-
-
-.contact-email {
-
-  .inputbox {
-    outline: none;
-    height: 3rem;
-    width: 100%;
-    display: block;
-    background: #EFEFEF;
-    color: black;
-    border: 0px solid #505050;
-    border-radius: 5px;
-    transition: 0.3s;
-    margin-top: 0.5rem;
-  }
-
-  :not(textarea) {
-    text-align: center;
-  }
-
-  .inputbox:hover {
-    background: #DEDEDE;
-  }
-
-  .inputbox:focus {
-    background: #CECECE;
-  }
-
-  button {
-    width: 100%;
-    height: 3rem;
-    border-radius: 5px;
-    text-align: center;
-  }
-
-  .formbutton {
-    background: #272727;
-    color: #fff;
-    border: 0px;
-    transition-duration: 300ms;
-    cursor: pointer;
-  }
-
-  .formbutton:hover {
-    background: #727272;
-  }
-
-  .form {
-    border-radius: 5px;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    padding: 4rem 2.5rem;
-    width: 65%;
-    background: #FDFDFD;
-    box-shadow: rgba(50, 50, 50, 0.1) 0px 4px 12px;
-  }
-
-  .error_box {
-    background: #FFEEEE;
-    border-radius: 5px;
-
-    margin: auto;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 1rem 1rem;
-    margin-bottom: 1.5rem;
-  }
-}
-
-textarea,
-textfield {
-  padding: 5px;
-  font-size: 0.95rem;
-}
-
 
 @media screen and (width >=1180px) and (width<=1690px) {
   /*if(width<1620px&&width>=1125px)*/
