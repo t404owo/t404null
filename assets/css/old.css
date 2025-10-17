@@ -582,12 +582,14 @@ nav .dropdown {
   height: 3rem;
   width: 100%;
   display: block;
-  background: #efefef;
+  background: #EFEFEF;
   color: black;
   border: 0px solid #505050;
   border-radius: 5px;
   transition: 0.3s;
   margin-top: 0.5rem;
+  margin-left: -5px;
+  padding: 5px;
 }
 
 .contact-email :not(textarea) {
@@ -659,6 +661,8 @@ textarea,
 textfield {
   padding: 5px;
   font-size: 0.95rem;
+  resize: vertical;
+  min-height: 5rem;
 }
 
 .topic {
