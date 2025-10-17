@@ -40,7 +40,7 @@ form.addEventListener("submit", async (e) => {
         }
 
         statusMessage.textContent = "Message sent successfully!";
-        statusMessage.style = "background: #FFDCDC";
+        statusMessage.style = "background: #DDF6D2";
         form.reset();
     } catch (error) {
         console.error("Error sending message:", error);
