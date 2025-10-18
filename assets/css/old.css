@@ -590,6 +590,7 @@ nav .dropdown {
   margin-top: 0.5rem;
   margin-left: -5px;
   padding: 5px;
+  font-size: 0.95rem;
 }
 
 .contact-email :not(textarea) {
@@ -660,7 +661,6 @@ nav .dropdown {
 textarea,
 textfield {
   padding: 5px;
-  font-size: 0.95rem;
   resize: vertical;
   min-height: 5rem;
 }
