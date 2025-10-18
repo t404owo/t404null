@@ -2,34 +2,6 @@
 @import url("/assets/css/fonts/noto-sans-jp.css");
 @import url("/assets/css/fonts/plus-jarkata-sans.css");
 
-body {
-  margin: 0px;
-  height: 100%;
-}
-
-main,
-textarea,
-textfield {
-  font-family: Jost, "Noto Sans Japanese", sans-serif, --apple-system;
-}
-
-main {
-  margin: 0.75rem;
-  height: 100%;
-  margin-bottom: 0;
-  margin-top: 0;
-  min-height: calc(100vh - 10vh);
-}
-
-.main-page {
-  max-width: 2300px;
-  margin: 0 auto;
-}
-
-hr {
-  margin: 2rem 0px;
-}
-
 nav {
   z-index: 4;
   position: -webkit-sticky;
@@ -114,24 +86,6 @@ nav .dropdown {
   display: none;
   opacity: 0;
   transition: 0.3s;
-}
-
-.footer {
-  font-family: Jost, "Plus Jakarta Sans", "Noto Sans Japanese", sans-serif;
-  position: sticky;
-  /* width: 100%;
-	 */
-  background-color: white;
-  /* bottom: 0;
-	 */
-  /* left:0;
-	 */
-  z-index: 3;
-  padding: 1rem;
-  background-color: #ddd;
-  margin: 0px;
-  text-align: center;
-  align-content: center;
 }
 
 /*---nav---*/
@@ -265,51 +219,7 @@ nav .dropdown {
   transition-delay: 0.3s;
 }
 
-.dropdown {
-  display: none;
-  overflow: auto;
-  max-height: 70vh;
-}
-
 /*---- main ----*/
-.container {
-  position: relative;
-  height: 50vw;
-  width: 100%;
-  margin: auto;
-  margin-top: 1rem;
-}
-
-.carousel {
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #ddd;
-  border-radius: 0.5rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.slider-bg {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  filter: blur(5px) brightness(75%);
-  -webkit-filter: blur(5px) brightness(60%);
-  z-index: 1;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  transition: 0.3s;
-  padding: auto;
-  border-radius: 0.5rem;
-  transform: scale(1.1);
-}
 
 .slider section {
   overflow: hidden;
@@ -360,67 +270,6 @@ nav .dropdown {
 
 .slider:hover {
   cursor: pointer;
-}
-
-.prev,
-.next {
-  background-color: rgba(0, 0, 0, 0.3);
-  color: #fff;
-  position: absolute;
-  height: 5rem;
-  width: 5rem;
-  font-size: 4.5rem;
-  top: 50%;
-  transform: translate(0, -50%);
-  z-index: 2;
-  cursor: pointer;
-  border-radius: 0.5rem;
-  font-family: serif;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.next {
-  right: 1rem;
-}
-
-.prev {
-  left: 1rem;
-}
-
-.pgctrl {
-  font-family: sans-serif, --apple-system;
-  z-index: 1;
-  position: absolute;
-  bottom: 0.5rem;
-  left: 50%;
-  vertical-align: middle;
-  transform: translate(-50%);
-  padding: 0px 0.5rem;
-  margin: 0px 0px;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  list-style: none;
-  display: flex;
-  z-index: 2;
-  font-size: 4rem;
-  color: white;
-  cursor: pointer;
-  transition: 0.75s;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.control {
-  text-align: center;
 }
 
 /* Cards */
@@ -658,13 +507,6 @@ nav .dropdown {
   margin-bottom: 1rem;
 }
 
-textarea,
-textfield {
-  padding: 5px;
-  resize: vertical;
-  min-height: 5rem;
-}
-
 .topic {
   padding: 1rem;
   font-size: 3rem;
@@ -686,21 +528,6 @@ textfield {
 .topic a:hover {
   opacity: 70%;
   background-size: 100% 0.2em;
-}
-
-/* overall */
-.icons {
-  font-size: 2.25rem;
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "NerdFontsSymbols Nerd Font";
-  src: url("/assets/fonts/nf-symbols.woff2") format("woff2");
-}
-
-.nf-icons {
-  font-family: "NerdFontsSymbols Nerd Font";
 }
 
 /* Releases */
@@ -774,15 +601,6 @@ textfield {
 
 .info .title {
   font-size: 1.6rem;
-}
-
-.subdiv {
-  padding: 1rem;
-}
-
-.long-br {
-  display: block;
-  height: 2rem;
 }
 
 @media screen and (width >=1180px) and (width<=1690px) {
