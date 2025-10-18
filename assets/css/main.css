@@ -12,6 +12,7 @@ main,
 textarea,
 textfield {
   font-family: Jost, "Noto Sans Japanese", sans-serif, --apple-system;
+  font-size: 1.25rem;
 }
 
 main {
