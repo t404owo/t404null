@@ -44,7 +44,7 @@ form.addEventListener("submit", async (e) => {
         form.reset();
     } catch (error) {
         console.error("Error sending message:", error);
-        statusMessage.textContent = (error === "field_missing") ?
+        statusMessage.textContent = (error.message === "field_missing") ?
         /*if (error==="field_missing")*/    
             "Please fill in all fields." :
         /*else*/
