@@ -23,14 +23,14 @@ form.addEventListener("submit", async (e) => {
     const subject = subjectInput.value.trim();
     const message = messageInput.value.trim();
 
-    if (!name || !email || !subject || !message || 
-        name.length==0 || email.length==0 || subject.length==0 || message.length==0) {
-        statusMessage.textContent = "Please fill in all fields.";
-        statusMessage.style = "background: #FFDCDC";
-        return;
-    }
-
     try {
+    
+        [name, email, subject, message].forEach(obj =>
+            if (!obj || obj.length===0) {
+                throw new Error("field_missing");
+            }
+        });
+    
         const { data, error } = await supabase
             .from("mail")
             .insert([{ name, email, subject, message }]);
@@ -44,7 +44,11 @@ form.addEventListener("submit", async (e) => {
         form.reset();
     } catch (error) {
         console.error("Error sending message:", error);
-        statusMessage.textContent = "Error sending message. Please try again.";
+        statusMessage.textContent = (error === "field_missing") ?
+        /*if (error==="field_missing")*/    
+            "Please fill in all fields." :
+        /*else*/
+            "Error sending message. Please try again.";
         statusMessage.style = "background: #FFDCDC";
     }
 });
