@@ -13,7 +13,8 @@ const   form = document.getElementById("mail-form"),
         emailInput = document.getElementById("email"),
         subjectInput = document.getElementById("subject"),
         messageInput = document.getElementById("message"),
-        statusMessage = document.querySelector(".box");
+        statusMessage = document.querySelector(".box"),
+        submitButton = form.querySelector('button[type="submit"]');;
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -23,14 +24,16 @@ form.addEventListener("submit", async (e) => {
     const subject = subjectInput.value.trim();
     const message = messageInput.value.trim();
 
+  
     try {
     
-        [name, email, subject, message].forEach(obj =>
+        [name, email, subject, message].forEach(obj => {
             if (!obj || obj.length===0) {
                 throw new Error("field_missing");
             }
         });
-    
+        
+        if (submitButton) submitButton.disabled = true;
         const { data, error } = await supabase
             .from("mail")
             .insert([{ name, email, subject, message }]);
@@ -38,10 +41,11 @@ form.addEventListener("submit", async (e) => {
         if (error) {
             throw error;
         }
-
+        
         statusMessage.textContent = "Message sent successfully!";
         statusMessage.style = "background: #DDF6D2";
         form.reset();
+        if (submitButton) submitButton.disabled = false;
     } catch (error) {
         console.error("Error sending message:", error);
         statusMessage.textContent = (error.message === "field_missing") ?
@@ -50,5 +54,6 @@ form.addEventListener("submit", async (e) => {
         /*else*/
             "Error sending message. Please try again.";
         statusMessage.style = "background: #FFDCDC";
+      if (submitButton) submitButton.disabled = false;
     }
 });
