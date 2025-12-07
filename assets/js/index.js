@@ -14,7 +14,7 @@ let album_cards = document.querySelector(".album-cards"),
 half_img_cards = document.querySelector(".half-image-cards");
 
 //The Database call.
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@latest";
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2";
 
 const supabaseUrl = "https://owbamcqdmqetrgcznxva.supabase.co";
 const supabaseKey = "sb_publishable_b0fMYw5I1X97gQXJLVBnrA_-0L4qHGv";
