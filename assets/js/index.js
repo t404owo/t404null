@@ -18,7 +18,7 @@ import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 
 const supabaseUrl = "https://owbamcqdmqetrgcznxva.supabase.co";
 const supabaseKey =
-  "sb_publishable_b0fMYw5I1X97gQXJLVBnrA_-0L4qHGv";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im93YmFtY3FkbXFldHJnY3pueHZhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjI5NDU5NjIsImV4cCI6MjAzODUyMTk2Mn0.xNen7b513ZGwJ-Qu5iZ6K8qrmvy4QVjS10wiYbEEwKc";
 //anon key, you cant access private stuffs or add hilarious stuffs w/ this...
 //(unless sending me some malicious links but I delete your msg)
 //the moment you notice you need an API endpoint.
