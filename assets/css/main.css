@@ -28,6 +28,10 @@ main {
   margin: 0 auto;
 }
 
+.logo {
+  height: 3.5rem;
+}
+
 hr {
   margin: 2rem 0px;
 }
