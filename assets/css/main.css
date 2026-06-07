@@ -12,6 +12,7 @@ main,
 textarea,
 textfield {
   font-family: Jost, "Noto Sans Japanese", sans-serif, --apple-system;
+  font-size: 1.25rem;
 }
 
 main {
@@ -25,6 +26,10 @@ main {
 .main-page {
   max-width: 2300px;
   margin: 0 auto;
+}
+
+.logo {
+  height: 3.5rem;
 }
 
 hr {
@@ -604,6 +609,7 @@ nav {
     margin-top: 0.5rem;
     margin-left:-5px;
     padding: 5px;
+    font-size:0.95rem;
   }
 
   :not(textarea) {
@@ -676,7 +682,6 @@ nav {
 textarea,
 textfield {
   padding: 5px;
-  font-size: 0.95rem;
   resize: vertical;
   min-height: 5rem;
 }

@@ -13,7 +13,8 @@ const   form = document.getElementById("mail-form"),
         emailInput = document.getElementById("email"),
         subjectInput = document.getElementById("subject"),
         messageInput = document.getElementById("message"),
-        statusMessage = document.querySelector(".box");
+        statusMessage = document.querySelector(".box"),
+        submitButton = form.querySelector('button[type="submit"]');;
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -23,14 +24,16 @@ form.addEventListener("submit", async (e) => {
     const subject = subjectInput.value.trim();
     const message = messageInput.value.trim();
 
-    if (!name || !email || !subject || !message || 
-        name.length==0 || email.length==0 || subject.length==0 || message.length==0) {
-        statusMessage.textContent = "Please fill in all fields.";
-        statusMessage.style = "background: #FFDCDC";
-        return;
-    }
-
+  
     try {
+    
+        [name, email, subject, message].forEach(obj => {
+            if (!obj || obj.length===0) {
+                throw new Error("field_missing");
+            }
+        });
+        
+        if (submitButton) submitButton.disabled = true;
         const { data, error } = await supabase
             .from("mail")
             .insert([{ name, email, subject, message }]);
@@ -38,13 +41,19 @@ form.addEventListener("submit", async (e) => {
         if (error) {
             throw error;
         }
-
+        
         statusMessage.textContent = "Message sent successfully!";
         statusMessage.style = "background: #DDF6D2";
         form.reset();
+        if (submitButton) submitButton.disabled = false;
     } catch (error) {
         console.error("Error sending message:", error);
-        statusMessage.textContent = "Error sending message. Please try again.";
+        statusMessage.textContent = (error.message === "field_missing") ?
+        /*if (error==="field_missing")*/    
+            "Please fill in all fields." :
+        /*else*/
+            "Error sending message. Please try again.";
         statusMessage.style = "background: #FFDCDC";
+      if (submitButton) submitButton.disabled = false;
     }
 });

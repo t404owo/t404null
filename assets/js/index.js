@@ -17,8 +17,8 @@ half_img_cards = document.querySelector(".half-image-cards");
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
 const supabaseUrl = "https://owbamcqdmqetrgcznxva.supabase.co";
-const supabaseKey =
-  "sb_publishable_b0fMYw5I1X97gQXJLVBnrA_-0L4qHGv";
+const supabaseKey = "sb_publishable_b0fMYw5I1X97gQXJLVBnrA_-0L4qHGv";
+
 //anon key, you cant access private stuffs or add hilarious stuffs w/ this...
 //(unless sending me some malicious links but I delete your msg)
 //the moment you notice you need an API endpoint.
