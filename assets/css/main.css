@@ -5,8 +5,7 @@
 
 body {
   margin: 0px;
-  height: 100%;
-}
+ }
 
 main,
 textarea,
@@ -21,6 +20,13 @@ main {
   margin-bottom: 0;
   margin-top: 0;
   min-height: calc(100vh - 10vh);
+  view-transition-name: main-page;
+  transition-property: opacity, display;
+  transition-duration: 1s;
+  opacity: 1;
+  @starting-style {
+    opacity: 0;
+  }
 }
 
 .main-page {
@@ -949,4 +955,33 @@ textfield {
       display: block;
     }
   }
+}
+
+@view-transition {
+  navigation: none;
+  animation: none;
+  
+}
+
+::view-transition-group(main-page) {
+  animation-timing-function: ease-out;
+}
+::view-transition-old(main-page) {
+  animation-name: fade-out;
+}
+
+::view-transition-new(main-page) {
+  animation-name: fade-in;
+}
+
+@keyframes fade-out {
+  0% { opacity: 1; translate: 0;}
+  50% { opacity: 0; translate: -1wv;}
+  100% { opacity: 0;}
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; translate: -1wv;}
+  50% { opacity: 0; translate: 0;}
+  100% { opacity: 1;}
 }
