@@ -23,7 +23,7 @@ main {
   min-height: calc(100vh - 10vh);
   view-transition-name: main-page;
   transition-property: opacity, display;
-  transition-duration: 0.5s;
+  transition-duration: 1s;
   opacity: 1;
   @starting-style {
     opacity: 0;
@@ -965,7 +965,6 @@ textfield {
 }
 
 ::view-transition-group(main-page) {
-  animation-duration: 0.5s;
   animation-timing-function: ease-out;
 }
 ::view-transition-old(main-page) {
