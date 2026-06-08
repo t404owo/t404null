@@ -21,6 +21,13 @@ main {
   margin-bottom: 0;
   margin-top: 0;
   min-height: calc(100vh - 10vh);
+  view-transition-name: main-page;
+  transition-property: opacity, display;
+  transition-duration: 0.5s;
+  opacity: 1;
+  @starting-style {
+    opacity: 0;
+  }
 }
 
 .main-page {
@@ -949,4 +956,34 @@ textfield {
       display: block;
     }
   }
+}
+
+@view-transition {
+  navigation: auto;
+  animation: none;
+  
+}
+
+::view-transition-group(main-page) {
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+::view-transition-old(main-page) {
+  animation-name: fade-out;
+}
+
+::view-transition-new(main-page) {
+  animation-name: fade-in;
+}
+
+@keyframes fade-out {
+  0% { opacity: 1;}
+  50% { opacity: 0;}
+  100% { opacity: 0;}
+}
+
+@keyframes fade-in {
+  0% { opacity: 0;}
+  50% { opacity: 0;}
+  100% { opacity: 1;}
 }
