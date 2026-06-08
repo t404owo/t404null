@@ -959,7 +959,7 @@ textfield {
 }
 
 @view-transition {
-  navigation: auto;
+  navigation: none;
   animation: none;
   
 }
